@@ -1,0 +1,160 @@
+<HTML>
+<HEAD>
+<SCRIPT type="text/javascript">
+function greet()
+{
+var name = prompt("Enter your name ","Priyanka");
+if(name!=null && name!=" ")
+{
+	document.write("Welcome "+name);
+}
+}
+function zeroCheck(){
+var secondNum=document.getElementById("num2").value;
+if(secondNum==0){
+alert("Second Number is zero");
+}
+}
+
+function multiply()
+{
+var num3=document.getElementById("num3").value;
+var i,x;
+for(i=1;i<11;i++) {
+    document.write(num3 + " x " + i + " = " + num3*i+"<br>");
+	}
+var r=confirm("Press a button");
+if(r==true)
+{
+	alert("You clicked OK button");
+}
+else
+{
+	alert("You clicked Cancel button");
+} 	
+}
+
+function isaVowel(){
+var alpha=document.getElementById("alphabet1").value;
+if(alpha=="a"||alpha=="e"||alpha=="i"||alpha=="o"||alpha=="u")
+{
+	alert("Its a vowel");
+}
+}
+function prime()
+{
+var i,flag;
+var firstNum=document.getElementById("num4").value;
+var secondNum=document.getElementById("num5").value;
+while(firstNum<secondNum)
+{
+
+	flag=0;
+	for(i=2;i<=firstNum/2;++i)
+	{
+		if(firstNum%i==0){
+			flag=1;
+			break;
+			}
+	}
+	if(flag==0)
+	{
+		document.write(firstNum+"<br>");
+		
+	}
+	++firstNum;
+}
+}
+
+function fact()
+{
+var fact=1;
+var num=document.getElementById("num6").value;
+if(num<0)
+{	
+	document.write("Invalid Number");
+}
+else{
+		for(i=1;i<=num;++i)
+		{
+			fact=fact*i;
+		}
+		document.write(fact);
+	}
+}
+var count=3;
+function checkuser(){
+	var emailid=document.getElementById("email").value;
+	var password=document.getElementById("pass").value;
+	
+	if(emailid=="user" && password=="user123")
+	{
+		alert("Login Successful");
+	}
+	else{
+	count--;
+	}
+	if(count<0)
+	{
+	alert("Account Locked");
+	}
+}
+var array=new Array();
+function addElements(){
+	array.push(document.getElementById("numarr").value)
+}
+function array1(){
+var i;
+var min=array[0];
+var max=array[0];
+var sum=array[0];
+for(i=0;i<array.length;i++){
+	sum+=array[i];
+	if(array[i]>max)
+	{	
+		max=array[i];
+	}
+	if(array[i]<min)
+	{	
+		min=array[i];
+	}
+}
+document.write(min +" "+ max +" "+ sum);
+}
+
+var numbers=[10,3,4,7,8,2,1];
+function Descending(){
+		document.write(numbers.sort(function(a, b){return b-a}));
+}
+function Ascending(){
+		document.write(numbers.sort(function(a, b){return a-b}));
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<input type="button" value="Submit" onclick="greet()"><br><br>
+firstNum:<input type="text" id="num1"><br>
+<input type="text" id="num2"><br>
+secondNum:<input type="button" value="Submit" onclick="zeroCheck()"><br><br>
+Enter a number whose multiplication table you want:<input type="text" id="num3"><br>
+<input type="button" value="Submit" onclick="multiply()"><br><br>
+Enter an alphabet:<input type="text" id="alphabet1">
+<input type="button" value="Submit" onclick="isaVowel()"><br><br>
+
+firstNum:<input type="number" id="num4"><br>
+secondNum:<input type="number" id="num5"><br>
+<input type="button" value="Submit" onclick="prime()"><br><br>
+
+Enter a number whose factorial you want to calculate:<input type="number" id="num6"><br>
+<input type="button" value="Submit" onclick="fact()"><br><br>
+
+Email:<input type="text" id="email"><br>
+Password:<input type="password" id="pass"><br>
+<input type="button" value="Submit" onclick="checkuser()"><br><br>
+<input type="number" id="numarr"><br>
+<input type="button" value="Add Elements" onclick="addElements()"><br><br>
+<input type="button" value="Array" onclick="array1()"><br><br>
+<button onclick="Descending()">Try it</button>
+<button onclick="Ascending()">Try it</button>
+</BODY>
+</HTML>
